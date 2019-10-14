@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    restart: always
+    image: 823697124144.dkr.ecr.us-east-1.amazonaws.com/personal-site/nginx
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - 80:80
+  client:
+    image: 823697124144.dkr.ecr.us-east-1.amazonaws.com/personal-site/client
+    build:
+      dockerfile: ./Dockerfile
+      context: ./client
